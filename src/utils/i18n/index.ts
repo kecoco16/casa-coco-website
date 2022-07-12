@@ -1,0 +1,17 @@
+import { SSRConfig } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
+import { i18nConfig } from 'config'
+
+const getServerSideTranslations = (
+  locale: string,
+  nameSpaces?: string[]
+): Promise<SSRConfig> => {
+  return serverSideTranslations(locale || i18nConfig.defaultLocale, nameSpaces)
+}
+
+const i18nUtils = {
+  getServerSideTranslations
+}
+
+export default i18nUtils
