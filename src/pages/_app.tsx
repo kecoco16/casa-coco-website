@@ -7,6 +7,7 @@ import { appWithTranslation } from 'next-i18next'
 import '../styles/globals.css'
 
 import { seoConfig, analyticsConfig } from 'config'
+import { Layout } from 'components'
 
 const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,
@@ -44,7 +45,9 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
         />
       </Head>
 
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   )
 }

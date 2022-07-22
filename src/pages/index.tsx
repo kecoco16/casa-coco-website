@@ -11,11 +11,11 @@ const Home: NextPage = () => {
     <>
       <NextSeo title={t('home')} description={t('home')} />
 
-      <main className='min-h-screen	p-4 flex flex-1 flex-col justify-center items-center'>
+      <div className='h-[90vh] p-4 flex flex-1 flex-col justify-center items-center'>
         <h1 className='text-center text-5xl'>
           {t('welcomeTo', { appName: 'Timber Trader!' })}
         </h1>
-      </main>
+      </div>
     </>
   )
 }
