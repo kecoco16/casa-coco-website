@@ -13,7 +13,7 @@ const Home: NextPage = () => {
 
       <div className='h-[90vh] p-4 flex flex-1 flex-col justify-center items-center'>
         <h1 className='text-center text-5xl'>
-          {t('welcomeTo', { appName: 'Timber Trader!' })}
+          {t('welcomeTo', { appName: 'Casa Coco!' })}
         </h1>
       </div>
     </>

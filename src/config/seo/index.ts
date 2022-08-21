@@ -1,10 +1,10 @@
 import { DefaultSeoProps } from 'next-seo'
-const title = 'Timber Trader'
-const description = 'Timber Trader website.'
-const url = 'https://timbertrader.app'
+const title = 'Casa Coco'
+const description = 'Casa coco website.'
+const url = 'https://casacoco.info'
 
 const SEO: DefaultSeoProps = {
-  titleTemplate: 'Timber Trader | %s',
+  titleTemplate: '%s | Casa Coco',
   title,
   description,
   canonical: url,
@@ -14,7 +14,7 @@ const SEO: DefaultSeoProps = {
     url,
     title,
     description,
-    site_name: 'Timber Trader'
+    site_name: 'Casa Coco'
     // images: [
     //   {
     //     url: `${url}/images/preview-image.png`,
@@ -23,8 +23,8 @@ const SEO: DefaultSeoProps = {
     // ],
   },
   twitter: {
-    handle: 'Timber Trader',
-    site: 'Timber Trader',
+    handle: 'Casa Coco',
+    site: 'Casa Coco',
     cardType: 'summary_large_image'
   }
 }
