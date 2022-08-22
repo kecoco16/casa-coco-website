@@ -1,8 +1,10 @@
 import type { NextPage, GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
 import { useTranslation } from 'next-i18next'
+import Image from 'next/image'
 
 import { routeUtils, i18nUtils } from 'utils'
+import Logo from '../../public/logo.png'
 
 const Home: NextPage = () => {
   const { t } = useTranslation()
@@ -12,9 +14,10 @@ const Home: NextPage = () => {
       <NextSeo title={t('home')} description={t('home')} />
 
       <div className='h-[90vh] p-4 flex flex-1 flex-col justify-center items-center'>
-        <h1 className='text-center text-5xl'>
-          {t('welcomeTo', { appName: 'Casa Coco!' })}
+        <h1 className='text-center text-5xl mb-10'>
+          {t('welcomeTo', { appName: '' })}
         </h1>
+        <Image alt='Logo' src={Logo} />
       </div>
     </>
   )
