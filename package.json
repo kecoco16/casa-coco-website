@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "clean": "rm -rf node_modules && yarn && yarn dev",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(ts|tsx|json)\"",
@@ -21,6 +22,7 @@
     "next": "12.2.2",
     "next-i18next": "^11.0.0",
     "next-seo": "^5.4.0",
+    "next-sitemap": "^3.1.21",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

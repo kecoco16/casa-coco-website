@@ -1,7 +1,7 @@
 import { DefaultSeoProps } from 'next-seo'
 const title = 'Casa Coco'
 const description = 'Casa coco website.'
-const url = 'https://casacoco.info'
+export const url = process.env.NEXT_PUBLIC_DOMAIN_URL || 'https://casacoco.info'
 
 const SEO: DefaultSeoProps = {
   titleTemplate: '%s | Casa Coco',
