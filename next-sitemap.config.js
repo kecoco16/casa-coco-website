@@ -6,9 +6,7 @@ const siteUrl =
 module.exports = {
   siteUrl,
   generateRobotsTxt: true,
-  exclude: ['/server-sitemap-index.xml'],
   robotsTxtOptions: {
-    policies: [{ userAgent: '*', allow: '/' }],
-    additionalSitemaps: [`${siteUrl}/server-sitemap-index.xml`]
+    policies: [{ userAgent: '*', allow: '/' }]
   }
 }

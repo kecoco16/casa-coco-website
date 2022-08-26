@@ -7,4 +7,3 @@ Host: https://www.casacoco.info
 
 # Sitemaps
 Sitemap: https://www.casacoco.info/sitemap.xml
-Sitemap: https://www.casacoco.info/server-sitemap-index.xml
