@@ -1,4 +1,6 @@
 {
   "home": "Inicio",
-  "welcomeTo": "Bienvenido a {{appName}}"
+  "welcomeTo": "Bienvenido a {{appName}}",
+  "gallery": "Galería",
+  "map": "Mapa"
 }
