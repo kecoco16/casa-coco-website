@@ -2,5 +2,9 @@
   "home": "Inicio",
   "welcomeTo": "Bienvenido a {{appName}}",
   "gallery": "Galería",
-  "map": "Mapa"
+  "map": "Mapa",
+  "overview": "General",
+  "thingsToDo": "Cosas que hacer",
+  "reviews": "Reseñas",
+  "contact": "Contacto"
 }

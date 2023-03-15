@@ -12,15 +12,15 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <NextSeo title={t('home')} description={t('home')} />
+      <NextSeo title={t('home') || ''} description={t('home') || ''} />
 
       <div className='relative'>
         <div className='z-10'>
           <Image
             src={BgImage}
             alt='Header'
-            layout='fill'
-            objectFit='cover'
+            fill
+            className='object-cover'
             placeholder='blur'
           />
         </div>
