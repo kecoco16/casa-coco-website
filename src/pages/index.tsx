@@ -4,7 +4,6 @@ import { useTranslation } from 'next-i18next'
 import Image from 'next/image'
 
 import { routeUtils, i18nUtils } from 'utils'
-import Logo from '../../public/logo.png'
 import BgImage from '../../public/images/bg.png'
 
 const Home: NextPage = () => {
@@ -14,7 +13,7 @@ const Home: NextPage = () => {
     <>
       <NextSeo title={t('home') || ''} description={t('home') || ''} />
 
-      <div className='relative'>
+      <div className='relative h-[90vh]'>
         <div className='z-10'>
           <Image
             src={BgImage}
@@ -25,11 +24,14 @@ const Home: NextPage = () => {
           />
         </div>
 
-        <div className='z-20 relative h-[90vh] p-4 flex flex-1 flex-col justify-center items-center'>
-          <h1 className='text-white	text-center text-5xl mb-10'>
-            {t('welcomeTo', { appName: '' })}
-          </h1>
-          <Image alt='Logo' src={Logo} />
+        <div className='z-20 relative h-full flex flex-1 flex-col justify-center items-center'>
+          <a
+            target='_blank'
+            href='https://airbnb.com/h/cerro-chompipe'
+            className='text-white bg-blue-600 hover:bg-blue-700 focus:ring-1 focus:ring-blue-800 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2'
+          >
+            {t('book')}
+          </a>
         </div>
       </div>
     </>

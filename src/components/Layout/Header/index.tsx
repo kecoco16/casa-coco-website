@@ -58,7 +58,7 @@ const Header: React.FC = () => {
             <Image alt='Logo' src={Logo} height={40} />
           </Link>
           <button
-            className='inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200'
+            className='inline-flex items-center rounded-md p-2 ml-3 text-sm text-gray-500 md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200'
             onClick={handleToggleMenu}
           >
             <svg
@@ -81,13 +81,13 @@ const Header: React.FC = () => {
               showMenu ? 'block' : 'hidden'
             } w-full md:block md:w-auto`}
           >
-            <ul className='flex space-y-2 flex-col mt-4 rounded-lg bg-gray-50 md:space-y-0 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent'>
+            <ul className='flex space-y-2 flex-col mt-4 bg-gray-50 md:space-y-0 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent'>
               {pages?.map(page => {
                 return (
                   <li key={page.id}>
                     <Link
                       href={page.href}
-                      className='block py-2 pl-3 pr-4 bg-gray-100 rounded md:bg-transparent md:p-0'
+                      className='block rounded-md py-2 pl-3 pr-4 bg-gray-100 md:bg-transparent md:p-0'
                       aria-current='page'
                       onClick={handleCloseMenu}
                     >
