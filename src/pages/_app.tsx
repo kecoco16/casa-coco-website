@@ -4,9 +4,10 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { DefaultSeo } from 'next-seo'
 import { appWithTranslation } from 'next-i18next'
+import { LoadScript } from '@react-google-maps/api'
 import '../styles/globals.css'
 
-import { seoConfig, analyticsConfig } from 'config'
+import { seoConfig, analyticsConfig, mapsConfig } from 'config'
 import { Layout } from 'components'
 
 const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
@@ -46,7 +47,9 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
       </Head>
 
       <Layout>
-        <Component {...pageProps} />
+        <LoadScript googleMapsApiKey={mapsConfig.apiKey}>
+          <Component {...pageProps} />
+        </LoadScript>
       </Layout>
     </>
   )
