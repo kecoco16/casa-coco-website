@@ -1,9 +1,9 @@
 import type { NextPage, GetStaticProps } from 'next'
-import { NextSeo } from 'next-seo'
 import { useTranslation } from 'next-i18next'
 import Image from 'next/image'
 
 import { routeUtils, i18nUtils } from 'utils'
+import { Seo } from 'components'
 import BgImage from '../../public/images/bg.png'
 
 const Home: NextPage = () => {
@@ -11,7 +11,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <NextSeo title={t('home') || ''} description={t('home') || ''} />
+      <Seo title={t('home') || ''} description={t('home') || ''} />
 
       <div className='relative h-[90vh]'>
         <div className='z-10'>
