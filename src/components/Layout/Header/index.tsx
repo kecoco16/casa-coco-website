@@ -33,6 +33,11 @@ const pages = [
   },
   {
     id: 6,
+    label: 'smartHome',
+    href: '/smart-home'
+  },
+  {
+    id: 7,
     label: 'contact',
     href: '/contact'
   }
@@ -81,7 +86,7 @@ const Header: React.FC = () => {
               showMenu ? 'block' : 'hidden'
             } w-full md:block md:w-auto`}
           >
-            <ul className='flex space-y-2 flex-col mt-4 bg-gray-50 md:space-y-0 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent'>
+            <ul className='flex space-y-2 flex-col mt-4 bg-gray-50 md:space-y-0 md:flex-row md:space-x-6 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent'>
               {pages?.map(page => {
                 return (
                   <li key={page.id}>
