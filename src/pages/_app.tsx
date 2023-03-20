@@ -7,7 +7,7 @@ import { appWithTranslation } from 'next-i18next'
 import { LoadScript } from '@react-google-maps/api'
 import '../styles/globals.css'
 
-import { seoConfig, analyticsConfig, mapsConfig } from 'config'
+import { seoConfig, analyticsConfig, mapsConfig, tidioConfig } from 'config'
 import { Layout } from 'components'
 import { GlobalProvider } from 'context/global'
 
@@ -23,6 +23,8 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
         strategy='afterInteractive'
         src={`https://www.googletagmanager.com/gtag/js?id=${analyticsConfig.trackingCode}`}
       />
+
+      <Script async src={`//code.tidio.co/${tidioConfig.key}.js`} />
 
       <Script
         id='gtag-init'
