@@ -1,2 +1,5 @@
 export { default as Layout } from './Layout'
 export { default as Seo } from './Seo'
+export { default as Gallery } from './Gallery'
+export { default as GalleryModal } from './GalleryModal'
+export { default as GalleryCarousel } from './GalleryCarousel'

@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Bars3Icon } from '@heroicons/react/24/outline'
 
 import Logo from '../../../../public/logo.png'
 
@@ -66,20 +67,7 @@ const Header: React.FC = () => {
             className='inline-flex items-center rounded-md p-2 ml-3 text-sm text-gray-500 md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200'
             onClick={handleToggleMenu}
           >
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              viewBox='0 0 24 24'
-              strokeWidth={1.5}
-              stroke='currentColor'
-              className='w-6 h-6'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
-              />
-            </svg>
+            <Bars3Icon className='w-6 h-6' />
           </button>
           <div
             className={`${

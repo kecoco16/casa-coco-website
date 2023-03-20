@@ -9,13 +9,14 @@ import '../styles/globals.css'
 
 import { seoConfig, analyticsConfig, mapsConfig } from 'config'
 import { Layout } from 'components'
+import { GlobalProvider } from 'context/global'
 
 const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,
   pageProps
 }: AppProps) => {
   return (
-    <>
+    <GlobalProvider>
       <DefaultSeo {...seoConfig} />
 
       <Script
@@ -51,7 +52,7 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
           <Component {...pageProps} />
         </LoadScript>
       </Layout>
-    </>
+    </GlobalProvider>
   )
 }
 

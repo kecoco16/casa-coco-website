@@ -1,4 +1,4 @@
-const getAsString = (value?: string | string[]): string => {
+export const getAsString = (value?: string | string[]): string => {
   if (!value) {
     return ''
   }
