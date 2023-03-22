@@ -8,5 +8,13 @@
   "reviews": "Reseñas",
   "contact": "Contacto",
   "book": "Reserva",
-  "smartHome": "Casa inteligente"
+  "smartHome": "Casa inteligente",
+  "requiredField": "Campo requerido",
+  "invalidEmail": "Correo invalido",
+  "firstName": "Nombre",
+  "lastName": "Apellido",
+  "email": "Correo electronico",
+  "subject": "Asunto",
+  "body": "Mensaje",
+  "send": "Enviar"
 }

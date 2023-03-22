@@ -8,5 +8,13 @@
   "reviews": "Reviews",
   "contact": "Contact",
   "book": "Book",
-  "smartHome": "Smart home"
+  "smartHome": "Smart home",
+  "requiredField": "Required field",
+  "invalidEmail": "Invalid email",
+  "firstName": "First name",
+  "lastName": "Last name",
+  "email": "Email",
+  "subject": "Subject",
+  "body": "Body",
+  "send": "Send"
 }
