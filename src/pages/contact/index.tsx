@@ -2,15 +2,24 @@ import type { NextPage, GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { Bars3Icon } from '@heroicons/react/24/outline'
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 
 import { routeUtils, i18nUtils } from 'utils'
+import { getContactUrl } from 'utils/url'
+import { useFetch } from 'hooks'
 import { Seo, TextField, Button } from 'components'
 import { contactSchema } from 'schemas'
 import { ContactFormType } from 'schemas/contact'
+import { Header } from 'config/constants'
 
 const Contact: NextPage = () => {
   const { t } = useTranslation()
+  const { executeRecaptcha } = useGoogleReCaptcha()
+  const { fetch, loading, error } = useFetch({
+    onCompleted: () => {
+      console.log('onCompleted =====')
+    }
+  })
   const {
     register,
     handleSubmit,
@@ -19,8 +28,24 @@ const Contact: NextPage = () => {
     resolver: yupResolver(contactSchema.schema)
   })
 
-  const onSubmit = handleSubmit(data => {
-    console.log('data ====', data)
+  const onSubmit = handleSubmit(async data => {
+    try {
+      const reCaptchaToken = await executeRecaptcha?.('submit')
+      if (!reCaptchaToken) {
+        return
+      }
+
+      const contactUrl = getContactUrl(data)
+
+      await fetch(contactUrl, {
+        headers: {
+          [Header.RE_CAPTCHA_TOKEN]: reCaptchaToken
+        }
+      })
+    } catch (e) {
+      const error = e as Error
+      console.error(error?.message)
+    }
   })
 
   return (
@@ -71,7 +96,11 @@ const Contact: NextPage = () => {
             textarea
           />
 
-          <Button type='submit'>{t('send') as string}</Button>
+          {error ? <p className='text-sm text-red-600 mb-2'>{error}</p> : null}
+
+          <Button type='submit' disabled={loading}>
+            {t('send') as string}
+          </Button>
         </div>
       </form>
     </>

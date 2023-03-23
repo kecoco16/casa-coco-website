@@ -21,7 +21,7 @@ const Image: NextPage<ImagePageProps> = ({ currentPhoto }: ImagePageProps) => {
   const query = router.query
   const index = Number(getAsString(query?.photoId) || 0)
   const currentPhotoUrl = `https://res.cloudinary.com/${cloudinaryConfig?.cloudName}/image/upload/c_scale,w_2560/${currentPhoto?.public_id}.${currentPhoto?.format}`
-  console.log('currentPhotoUrl ==', currentPhotoUrl)
+
   return (
     <>
       <Seo

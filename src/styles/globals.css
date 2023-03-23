@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.grecaptcha-badge {
+    right: auto !important;
+    left: 0;
+    width: 70px !important;
+    -webkit-transition: width 0.5s ease-in-out !important;
+    -moz-transition: width 0.5s ease-in-out !important;
+    -o-transition: width 0.5s ease-in-out !important;
+    transition: width 0.5s ease-in-out !important;
+}
+
+.grecaptcha-badge:hover {
+    width: 256px !important;
+}

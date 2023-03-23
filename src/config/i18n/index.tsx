@@ -1,6 +1,6 @@
 export type Locale = 'en' | 'es'
 
-const defaultLocale = 'en'
+export const defaultLocale = 'en'
 
 const i18nConfig = {
   defaultLocale

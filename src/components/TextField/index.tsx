@@ -4,6 +4,7 @@ type TextFieldProps = JSX.IntrinsicElements['input'] & {
   label: string
   error?: string
   name?: string
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   register?: UseFormRegister<any>
   textarea?: boolean
 }

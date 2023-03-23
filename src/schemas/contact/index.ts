@@ -24,7 +24,9 @@ const schema = yup.object().shape({
   body: yup.string().required('requiredField')
 })
 
-export default {
+const contactSchema = {
   defaultValues,
   schema
 }
+
+export default contactSchema
