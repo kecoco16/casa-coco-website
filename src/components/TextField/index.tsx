@@ -32,7 +32,7 @@ const TextField: React.FC<TextFieldProps> = ({
         <textarea
           rows={4}
           className={`border text-sm rounded-lg block w-full p-2.5 ${inputClasses}`}
-          placeholder='Write your thoughts here...'
+          placeholder={inputProps?.placeholder}
           {...(register && name ? register(name) : {})}
         />
       ) : (

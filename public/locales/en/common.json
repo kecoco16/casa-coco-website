@@ -16,5 +16,7 @@
   "email": "Email",
   "subject": "Subject",
   "body": "Body",
-  "send": "Send"
+  "send": "Send",
+  "message": "Message",
+  "emailSendedMessage": "Email sent successfully, we will be responding soon."
 }

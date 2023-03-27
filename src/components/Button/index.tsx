@@ -1,10 +1,14 @@
+import Spinner from '../Spinner'
+
 type ButtonProps = JSX.IntrinsicElements['button'] & {
   children: string | JSX.Element | (string | JSX.Element)[]
+  loading?: boolean
 }
 
 const Button: React.FC<ButtonProps> = ({
   children,
   disabled = false,
+  loading = false,
   ...buttonProps
 }: ButtonProps) => {
   return (
@@ -15,6 +19,7 @@ const Button: React.FC<ButtonProps> = ({
       }`}
       {...buttonProps}
     >
+      {loading ? <Spinner /> : null}
       {children}
     </button>
   )

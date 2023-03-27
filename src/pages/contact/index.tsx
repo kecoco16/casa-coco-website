@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { NextPage, GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import { useForm } from 'react-hook-form'
@@ -14,22 +15,30 @@ import { Header } from 'config/constants'
 
 const Contact: NextPage = () => {
   const { t } = useTranslation()
+  const [emailSended, setEmailSended] = useState(false)
   const { executeRecaptcha } = useGoogleReCaptcha()
-  const { fetch, loading, error } = useFetch({
-    onCompleted: () => {
-      console.log('onCompleted =====')
-    }
-  })
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    reset
   } = useForm<ContactFormType>({
     resolver: yupResolver(contactSchema.schema)
+  })
+  const { fetch, loading, error } = useFetch({
+    onCompleted: () => {
+      reset()
+      setEmailSended(true)
+    }
   })
 
   const onSubmit = handleSubmit(async data => {
     try {
+      if (loading) {
+        return
+      }
+
+      setEmailSended(false)
       const reCaptchaToken = await executeRecaptcha?.('submit')
       if (!reCaptchaToken) {
         return
@@ -54,7 +63,7 @@ const Contact: NextPage = () => {
 
       <form onSubmit={onSubmit}>
         <div className='container mx-auto p-2'>
-          <h1 className='text-center'>{t('contact')}</h1>
+          <h1 className='text-center text-2xl mb-4'>{t('contact')}</h1>
           <TextField
             label={t('firstName')}
             placeholder='Kevin'
@@ -81,7 +90,7 @@ const Contact: NextPage = () => {
 
           <TextField
             label={t('subject')}
-            placeholder='Info'
+            placeholder={t('subject') as string}
             error={t(errors?.['subject']?.message || '') as string}
             name='subject'
             register={register}
@@ -89,7 +98,7 @@ const Contact: NextPage = () => {
 
           <TextField
             label={t('body')}
-            placeholder='Message'
+            placeholder={t('message') as string}
             error={t(errors?.['body']?.message || '') as string}
             name='body'
             register={register}
@@ -98,7 +107,13 @@ const Contact: NextPage = () => {
 
           {error ? <p className='text-sm text-red-600 mb-2'>{error}</p> : null}
 
-          <Button type='submit' disabled={loading}>
+          {emailSended ? (
+            <p className='text-sm text-green-600 mb-2'>
+              {t('emailSendedMessage')}
+            </p>
+          ) : null}
+
+          <Button type='submit' disabled={loading} loading={loading}>
             {t('send') as string}
           </Button>
         </div>

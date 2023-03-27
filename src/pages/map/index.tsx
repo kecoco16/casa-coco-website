@@ -14,7 +14,7 @@ const Map: NextPage = () => {
       <Seo title={t('map') || ''} description={t('map') || ''} />
 
       <div className='flex flex-col items-center'>
-        <h1 className='text-center mb-2'>{t('map')}</h1>
+        <h1 className='text-center text-2xl mb-4'>{t('map')}</h1>
         <GoogleMap
           mapContainerStyle={mapsConfig.containerStyle}
           center={mapsConfig.center}

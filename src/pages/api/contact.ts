@@ -1,11 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { NextApiRequest, NextApiResponse } from 'next'
-
+import nodemailer from 'nodemailer'
 import { RecaptchaEnterpriseServiceClient } from '@google-cloud/recaptcha-enterprise'
 
 import { routeUtils } from 'utils'
 import { Header } from 'config/constants'
-import { reCaptchaConfig, gCloudConfig } from 'config'
+import { reCaptchaConfig, gCloudConfig, emailConfig } from 'config'
 
 type Response = {
   message: string
@@ -27,11 +27,6 @@ const contact = async (
     const reCaptchaToken = routeUtils.getAsString(
       req?.headers?.[Header.RE_CAPTCHA_TOKEN]
     )
-    const firstName = routeUtils.getAsString(query?.firstName)
-    const lastName = routeUtils.getAsString(query?.lastName)
-    const subject = routeUtils.getAsString(query?.subject)
-    const body = routeUtils.getAsString(query?.body)
-    const email = routeUtils.getAsString(query?.email)
 
     const [assessment] = await reCaptchaClient.createAssessment({
       parent: reCaptchaClient.projectPath(gCloudConfig.projectId),
@@ -48,22 +43,36 @@ const contact = async (
       return res.status(401).json({ message: 'Invalid re captcha token' })
     }
 
-    console.log({
-      firstName,
-      lastName,
-      email,
-      subject,
-      body
+    const firstName = routeUtils.getAsString(query?.firstName)
+    const lastName = routeUtils.getAsString(query?.lastName)
+    const subject = routeUtils.getAsString(query?.subject)
+    const body = routeUtils.getAsString(query?.body)
+    const email = routeUtils.getAsString(query?.email)
+
+    const transporter = nodemailer.createTransport({
+      host: emailConfig.host,
+      port: emailConfig.port,
+      auth: {
+        user: emailConfig.user,
+        pass: emailConfig.password
+      },
+      secure: true
     })
 
-    if (isReCaptchaTokenValid) {
+    const emailResponse = await transporter.sendMail({
+      from: emailConfig.user,
+      to: emailConfig.to,
+      subject: `Contact form: ${subject}`,
+      text: `From: ${firstName} ${lastName}, with email ${email} just send you this message: ${body}`
+    })
+
+    if (emailResponse?.response) {
       res.status(200).json({ message: 'Email sended successfully' })
     } else {
       res.status(500).json({ message: 'failed to send email' })
     }
   } catch (e) {
     const error = e as Error
-
     res
       .status(500)
       .json({ message: `Interval server error: ${error?.message}` })

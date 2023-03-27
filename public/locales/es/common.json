@@ -16,5 +16,7 @@
   "email": "Correo electronico",
   "subject": "Asunto",
   "body": "Mensaje",
-  "send": "Enviar"
+  "send": "Enviar",
+  "message": "Mensaje",
+  "emailSendedMessage": "Email enviado con éxito, pronto estaremos respondiendo."
 }
