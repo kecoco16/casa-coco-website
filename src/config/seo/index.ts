@@ -1,6 +1,6 @@
 import { DefaultSeoProps } from 'next-seo'
 const title = 'Casa Coco'
-const description = 'Casa coco website.'
+const description = 'Vacation rental home in Costa Rica'
 export const url = process.env.NEXT_PUBLIC_DOMAIN_URL || 'https://casacoco.info'
 
 const SEO: DefaultSeoProps = {
@@ -9,18 +9,23 @@ const SEO: DefaultSeoProps = {
   description,
   canonical: url,
   openGraph: {
+    siteName: 'casacoco',
     type: 'website',
     locale: 'en',
     url,
     title,
     description,
-    site_name: 'Casa Coco'
-    // images: [
-    //   {
-    //     url: `${url}/images/preview-image.png`,
-    //     alt: title,
-    //   },
-    // ],
+    site_name: 'Casa Coco',
+    images: [
+      {
+        url: `${url}/images/bg.png`,
+        alt: title
+      },
+      {
+        url: `${url}/images/logo.png`,
+        alt: `${title} logo`
+      }
+    ]
   },
   twitter: {
     handle: 'Casa Coco',
