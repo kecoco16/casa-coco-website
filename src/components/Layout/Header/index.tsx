@@ -5,44 +5,7 @@ import Link from 'next/link'
 import { Bars3Icon } from '@heroicons/react/24/outline'
 
 import Logo from '../../../../public/logo.png'
-
-const pages = [
-  {
-    id: 1,
-    label: 'overview',
-    href: '/overview'
-  },
-  {
-    id: 2,
-    label: 'gallery',
-    href: '/gallery'
-  },
-  {
-    id: 3,
-    label: 'map',
-    href: '/map'
-  },
-  {
-    id: 4,
-    label: 'thingsToDo',
-    href: '/things-to-do'
-  },
-  {
-    id: 5,
-    label: 'reviews',
-    href: '/reviews'
-  },
-  {
-    id: 6,
-    label: 'smartHome',
-    href: '/smart-home'
-  },
-  {
-    id: 7,
-    label: 'contact',
-    href: '/contact'
-  }
-]
+import { pages } from 'config/constants'
 
 const Header: React.FC = () => {
   const { t } = useTranslation()
@@ -61,7 +24,7 @@ const Header: React.FC = () => {
       <nav className='p-3'>
         <div className='container mx-auto flex flex-wrap items-center justify-between'>
           <Link href='/'>
-            <Image alt='Logo' src={Logo} height={40} />
+            <Image alt='Logo' src={Logo} height={40} priority />
           </Link>
           <button
             className='inline-flex items-center rounded-md p-2 ml-3 text-sm text-gray-500 md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200'

@@ -11,7 +11,10 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Seo title={t('home') || ''} description={t('home') || ''} />
+      <Seo
+        title={t('home') || ''}
+        description={t('homeSEODescription') || ''}
+      />
 
       <div className='relative h-[90vh]'>
         <div className='z-10'>
