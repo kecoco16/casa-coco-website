@@ -9,7 +9,10 @@ const SmartHome: NextPage = () => {
 
   return (
     <>
-      <Seo title={t('smartHome') || ''} description={t('smartHome') || ''} />
+      <Seo
+        title={t('smartHomeSEOTitle') || ''}
+        description={t('smartHomeSEODescription') || ''}
+      />
 
       <h1 className='text-center'>{t('smartHome')}</h1>
     </>

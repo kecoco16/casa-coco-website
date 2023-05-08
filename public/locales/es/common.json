@@ -9,6 +9,8 @@
   "contact": "Contacto",
   "book": "Reserva",
   "smartHome": "Casa inteligente",
+  "smartHomeSEOTitle": "Vive la experiencia de una casa inteligente con tecnología de última generación.",
+  "smartHomeSEODescription": "Estamos comprometidos a hacer que tu hogar sea una experiencia de vida única y agradable.Trabajamos increíblemente para crear una casa inteligente que se adapta a tus necesidades y te proporciona la comodidad y la eficiencia que deseas. Contáctanos hoy para comenzar a crear la casa inteligente de tus sueños.",
   "requiredField": "Campo requerido",
   "invalidEmail": "Correo invalido",
   "firstName": "Nombre",
@@ -19,5 +21,15 @@
   "send": "Enviar",
   "message": "Mensaje",
   "emailSendedMessage": "Email enviado con éxito, pronto estaremos respondiendo.",
-  "homeSEODescription": "Hermoso y romantico lugar rodeado de paz y naturaleza para vacacionar"
+  "homeSEOTitle": "Descubre nuestra casa de alquiler rodeada de un ambiente natural inigualable y disfruta de la belleza del paisaje.",
+  "homeSEODescription": "Hermoso y romantico lugar rodeado de paz y naturaleza para vacacionar",
+  "contactDescription": "Necesitas informacion para alquilar la casa o quieres volver tu casa inteligente? dejamos un mensaje y te estaremos contactando pronto!",
+  "contactSEOTitle": "Estamos aquí para ayudarte. Ponte en contacto con nosotros hoy.",
+  "contactSEODescription": "Contáctanos para reservar nuestra casa de vacaciones o para crear tu propia casa inteligente y disfrutar de la tecnología moderna.",
+  "overviewSEOTitle": "Casa inteligente de alquiler para vacacionar en Costa Rica.",
+  "overviewSEODescription": "Casa Coco es una casa completamente inteligente, simplifica tu vida con nuestra tecnología domótica de última generación, visitanos para vacacionar o si estas interesado en hacer tu casa inteligente",
+  "youWant": "Quieres",
+  "rent": "alquilar",
+  "orDoYour": "o hacer tu",
+  "houseSmart": "casa inteligente"
 }

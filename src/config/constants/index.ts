@@ -4,27 +4,22 @@ export enum Header {
 
 export const pages = [
   {
-    id: 1,
+    id: 0,
     label: 'overview',
     href: '/overview'
   },
   {
-    id: 2,
+    id: 1,
     label: 'gallery',
     href: '/gallery'
   },
   {
-    id: 3,
-    label: 'map',
-    href: '/map'
-  },
-  {
-    id: 4,
+    id: 2,
     label: 'smartHome',
     href: '/smart-home'
   },
   {
-    id: 5,
+    id: 3,
     label: 'contact',
     href: '/contact'
   }

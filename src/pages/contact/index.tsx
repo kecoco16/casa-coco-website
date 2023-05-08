@@ -59,11 +59,16 @@ const Contact: NextPage = () => {
 
   return (
     <>
-      <Seo title={t('contact') || ''} description={t('contact') || ''} />
+      <Seo
+        title={t('contactSEOTitle') || ''}
+        description={t('contactSEODescription') || ''}
+      />
 
       <form onSubmit={onSubmit}>
         <div className='container mx-auto p-2'>
           <h1 className='text-center text-2xl mb-4'>{t('contact')}</h1>
+          <p className='text-md mb-4'>{t('contactDescription')}</p>
+
           <TextField
             label={t('firstName')}
             placeholder='Kevin'

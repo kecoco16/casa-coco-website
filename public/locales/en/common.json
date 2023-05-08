@@ -9,6 +9,8 @@
   "contact": "Contact",
   "book": "Book",
   "smartHome": "Smart home",
+  "smartHomeSEOTitle": "Live the experience of a smart home with the latest technology.",
+  "smartHomeSEODescription": "We are committed to making your home a unique and enjoyable living experience. We work incredibly hard to create a smart home that adapts to your needs and provides you with the comfort and efficiency you desire. Contact us today to start creating the smart home of your dreams.",
   "requiredField": "Required field",
   "invalidEmail": "Invalid email",
   "firstName": "First name",
@@ -19,5 +21,15 @@
   "send": "Send",
   "message": "Message",
   "emailSendedMessage": "Email sent successfully, we will be responding soon.",
-  "homeSEODescription": "Beautiful and romantic place surrounded by peace and nature to vacation"
+  "homeSEOTitle": "Discover our rental house surrounded by an incomparable natural environment and enjoy the beauty of the landscape",
+  "homeSEODescription": "Beautiful and romantic place surrounded by peace and nature to vacation",
+  "contactDescription": "Do you need information to rent the house or do you want to make your home smart? leave a message and we will be contacting you soon!",
+  "contactSEOTitle": "We are here to help you. Contact us today.",
+  "contactSEODescription": "Contact us to reserve our vacation home or to create your own smart home and enjoy modern technology.",
+  "overviewSEOTitle": "Smart home for vacation rental in Costa Rica.",
+  "overviewSEODescription": "Casa Coco is a completely smart home, simplify your life with our state-of-the-art home automation technology, visit us for your vacations or if you are interested in making your home smart",
+  "youWant": "You want",
+  "rent": "rent",
+  "orDoYour": "or do your",
+  "houseSmart": "house smart"
 }

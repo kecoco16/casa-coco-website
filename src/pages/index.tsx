@@ -1,6 +1,7 @@
 import type { NextPage, GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { routeUtils, i18nUtils } from 'utils'
 import { Seo } from 'components'
@@ -12,7 +13,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Seo
-        title={t('home') || ''}
+        title={t('homeSEOTitle') || ''}
         description={t('homeSEODescription') || ''}
       />
 
@@ -27,14 +28,24 @@ const Home: NextPage = () => {
           />
         </div>
 
-        <div className='z-20 relative h-full flex flex-1 flex-col justify-center items-center'>
-          <a
-            target='_blank'
-            href='https://airbnb.com/h/cerro-chompipe'
-            className='text-white bg-blue-600 hover:bg-blue-700 focus:ring-1 focus:ring-blue-800 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2'
-          >
-            {t('book')}
-          </a>
+        <div className='z-20 relative h-full flex flex-1 flex-col justify-center items-center px-2'>
+          <h1 className='text-white text-4xl'>
+            {`${t('youWant')} `}
+            <Link
+              href='/overview'
+              className='bg-blue-600 hover:bg-blue-700 focus:ring-1 focus:ring-blue-800'
+            >
+              {`${t('rent')} `}
+            </Link>
+            {`${t('orDoYour')} `}
+            <Link
+              href='/smart-home'
+              className='bg-blue-600 hover:bg-blue-700 focus:ring-1 focus:ring-blue-800'
+            >
+              {t('houseSmart')}
+            </Link>
+            ?
+          </h1>
         </div>
       </div>
     </>
